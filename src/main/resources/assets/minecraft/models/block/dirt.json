@@ -1,0 +1,63 @@
+{
+  "loader": "mc-recrafted:model",
+  "type": "connecting",
+  "parent": "block/block",
+  "textures": {
+    "particle": "#all",
+    "all": "block/dirt",
+    "sand_overlay": "mc-recrafted:block/sand_overlay",
+    "grass_overlay": "mc-recrafted:block/grass_overlay"
+  },
+  "connections": {
+    "sand_overlay": [
+      {
+        "type": "match_block",
+        "block": "minecraft:sand"
+      }
+    ],
+    "grass_overlay": [
+      {
+        "type": "match_block",
+        "block": "minecraft:grass_block"
+      }
+    ]
+  },
+  "elements": [
+    {
+      "from": [ 0, 0, 0 ],
+      "to": [ 16, 16, 16 ],
+      "faces": {
+        "down":  { "texture": "#all", "cullface": "down" },
+        "up":   { "texture": "#all", "cullface": "up" },
+        "north": { "texture": "#all", "cullface": "north" },
+        "south": { "texture": "#all", "cullface": "south" },
+        "west":  { "texture": "#all", "cullface": "west" },
+        "east":  { "texture": "#all", "cullface": "east" }
+      }
+    },
+    {
+      "from": [ 0, 0, 0 ],
+      "to": [ 16, 16, 16 ],
+      "faces": {
+        "down":   { "texture": "#sand_overlay", "cullface": "down" },
+        "up":   { "texture": "#sand_overlay", "cullface": "up" },
+        "north":   { "texture": "#sand_overlay", "cullface": "north" },
+        "south":   { "texture": "#sand_overlay", "cullface": "south" },
+        "west":   { "texture": "#sand_overlay", "cullface": "west" },
+        "east":   { "texture": "#sand_overlay", "cullface": "east" }
+      }
+    },
+    {
+      "from": [ 0, 0, 0 ],
+      "to": [ 16, 16, 16 ],
+      "faces": {
+        "down":   { "texture": "#grass_overlay", "cullface": "down", "tintindex": 0 },
+        "up":   { "texture": "#grass_overlay", "cullface": "up", "tintindex": 0 },
+        "north":   { "texture": "#grass_overlay", "cullface": "north", "tintindex": 0 },
+        "south":   { "texture": "#grass_overlay", "cullface": "south", "tintindex": 0 },
+        "west":   { "texture": "#grass_overlay", "cullface": "west", "tintindex": 0 },
+        "east":   { "texture": "#grass_overlay", "cullface": "east", "tintindex": 0 }
+      }
+    }
+  ]
+}

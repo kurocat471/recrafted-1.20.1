@@ -3,10 +3,13 @@ package net.kuro.recrafted;
 import com.google.common.collect.ImmutableSet;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.renderer.v1.RendererAccess;
 import net.fabricmc.fabric.api.renderer.v1.material.BlendMode;
 import net.fabricmc.fabric.api.renderer.v1.material.MaterialFinder;
 import net.fabricmc.fabric.api.renderer.v1.material.RenderMaterial;
+import net.kuro.recrafted.structure.block.ModBlockColors;
+import net.kuro.recrafted.structure.block.ModBlocks;
 import net.kuro.recrafted.structure.block.connectedtextures.api.model.DefaultModelTypes;
 import net.kuro.recrafted.structure.block.connectedtextures.api.model.RecraftedModelTypeRegistry;
 import net.kuro.recrafted.structure.block.connectedtextures.api.predicate.RecraftedPredicateRegistry;
@@ -28,6 +31,9 @@ import net.kuro.recrafted.structure.particle.ModParticleTypes;
 import net.kuro.recrafted.structure.screen.AnvilScreen;
 import net.kuro.recrafted.structure.screen.ModScreenHandlers;
 import net.kuro.recrafted.util.BlockRenderLayerRegistries;
+import net.minecraft.block.Blocks;
+import net.minecraft.client.color.world.BiomeColors;
+import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.texture.SpriteLoader;
@@ -50,7 +56,7 @@ public class RecraftedClient implements ClientModInitializer {
         ModMessages.registerS2CPackets();
         ClientNetworking.registerEvents();
         ModParticleTypes.registerParticleTypesClientSide();
-
+        ModBlockColors.registerBlockColors();
 
 
         // Register default texture types
