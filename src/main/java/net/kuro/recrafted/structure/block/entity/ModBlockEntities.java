@@ -15,6 +15,19 @@ import net.minecraft.util.Identifier;
 
 public class ModBlockEntities {
 
+    public static final BlockEntityType<WaterCauldronBlockEntity> RESISTOR_BE =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(Recrafted.MOD_ID, "resistor_block_entity"),
+                    FabricBlockEntityTypeBuilder.create(WaterCauldronBlockEntity::new,
+                            ModBlocks.RESISTOR,
+                            ModBlocks.EXPOSED_RESISTOR,
+                            ModBlocks.WEATHERED_RESISTOR,
+                            ModBlocks.OXIDIZED_RESISTOR,
+                            ModBlocks.WAXED_RESISTOR,
+                            ModBlocks.WAXED_EXPOSED_RESISTOR,
+                            ModBlocks.WAXED_WEATHERED_RESISTOR,
+                            ModBlocks.WAXED_OXIDIZED_RESISTOR
+                    ).build(null));
+
     public static final BlockEntityType<AnvilBlockEntity> ANVIL_BE =
             Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(Recrafted.MOD_ID, "anvil_block_entity"),
                     FabricBlockEntityTypeBuilder.create(AnvilBlockEntity::new,
